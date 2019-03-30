@@ -9,7 +9,8 @@ class controller{
 		std::list<funcionario> lst_funcionarios;
 		std::list<empresa> lst_empresas; 
 	public:
-		void addFuncionario(); // criar um novo funcionário
+		void novoFuncionario(); // criar um novo funcionário
+		void addFuncionario(); // alocar um funcionário a uma empresa
 		void listarFuncionariosEmpresa(int id_empresa); // listar todos os funcionários de uma empresa
 		void aumentoSalario(); // aumentar o salário de todos, em %
 		void funcionariosExp(); // listar os funcionários em experiência (com menos de 90 dias, considerando data atual)	
