@@ -1,4 +1,4 @@
-#include"date.h"
+#include "date.h"
 
 date::date(const int&d,const int&m,const int&y){
 	day_=d;

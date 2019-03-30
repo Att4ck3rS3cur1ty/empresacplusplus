@@ -1,22 +1,34 @@
 #include "funcionario.h"
 #include "date.h"
 #include <iostream>
+#include <string>
 using namespace std;
 
 void funcionario::setNome(string nome){funcionario::nome_ = nome;};
 
 void funcionario::setSalario(double salario){funcionario::salario_ = salario;};
 
-date funcionario::setDataAdmissao(const int& d; const int& m, const int& a){
-	funcionario::dia_ = d; funcionario::mes_ = m; funcionario::ano_ = a;};
+void funcionario::setDataAdmissao(const int& d, const int& m, const int& y){
+	date dt;
+	dt.setday(d);
+	dt.setmonth(m);
+	dt.setyear(y);
+};
 
 double funcionario::getSalario(){ return salario_;};
 
 string funcionario::getNome(){ return nome_; }
 
-date funcionario::getDataAdmissao(){ 
-	return 	
+string funcionario::getDataAdmissao(){ 
+	date dt;
+	string* dt_str = new string[3];
+	// conversão em string
+	dt_str[0] = to_string(dt.day());
+	dt_str[1] = to_string(dt.month());
+	dt_str[2] = to_string(dt.year());
+
+	return dt_str[0] + "/" + dt_str[1] + "/" + dt_str[2];
 };
 
-funcionario::funcionario():nome_(""), salario_(0){}
+funcionario::funcionario(int i):id_(i), nome_(""), salario_(0){}
 

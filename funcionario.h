@@ -5,19 +5,18 @@
 
 class funcionario{
 	private:
+		int id_; // incrementar o id quando chamar o método addFun...
 		std::string nome_;
 		double salario_;
-		int dia_;
-		int mes_;
-		int ano_;
 	public:
 		void setNome(std::string nome);				
 		void setSalario(double salario);
-		date setDataAdmissao(const int& d, const int& m, const int& y);
+		void setDataAdmissao(const int& d, const int& m, const int& y);
+		int getId();
 		std::string getNome();
 		double getSalario();
-		date getDataAdmissao();
-		funcionario();
+		string getDataAdmissao();
+		funcionario(int i);
 };
 
 #endif
