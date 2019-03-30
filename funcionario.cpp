@@ -34,5 +34,5 @@ string funcionario::getDataAdmissao(){
 	return dt_str[0] + "/" + dt_str[1] + "/" + dt_str[2];
 };
 
-funcionario::funcionario():id_empresa_(0), nome_(""), salario_(0){}
+funcionario::funcionario(int i):id_empresa_(i), nome_(""), salario_(0){}
 

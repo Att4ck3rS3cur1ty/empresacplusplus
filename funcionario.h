@@ -17,7 +17,7 @@ class funcionario{
 		std::string getNome();
 		double getSalario();
 		string getDataAdmissao();
-		funcionario();
+		funcionario(int i);
 };
 
 #endif
