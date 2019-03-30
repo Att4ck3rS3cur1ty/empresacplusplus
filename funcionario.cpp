@@ -4,6 +4,8 @@
 #include <string>
 using namespace std;
 
+void funcionario::setIdEmpresa(int id){funcionario::id_empresa_ = id;};
+
 void funcionario::setNome(string nome){funcionario::nome_ = nome;};
 
 void funcionario::setSalario(double salario){funcionario::salario_ = salario;};
@@ -14,6 +16,8 @@ void funcionario::setDataAdmissao(const int& d, const int& m, const int& y){
 	dt.setmonth(m);
 	dt.setyear(y);
 };
+
+int funcionario::getIdEmpresa(){return id_empresa_;};
 
 double funcionario::getSalario(){ return salario_;};
 
@@ -30,5 +34,5 @@ string funcionario::getDataAdmissao(){
 	return dt_str[0] + "/" + dt_str[1] + "/" + dt_str[2];
 };
 
-funcionario::funcionario(int i):id_(i), nome_(""), salario_(0){}
+funcionario::funcionario():id_empresa_(0), nome_(""), salario_(0){}
 
