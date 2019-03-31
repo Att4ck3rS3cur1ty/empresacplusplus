@@ -17,7 +17,7 @@ void funcionario::setDataAdmissao(const int& d, const int& m, const int& y){
 	dt.setyear(y);
 };
 
-int funcionario::getIdEmpresa(){return id_empresa_;};
+int funcionario::getIdEmpresa(){ return id_empresa_;};
 
 double funcionario::getSalario(){ return salario_;};
 
