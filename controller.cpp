@@ -18,7 +18,7 @@ const string controller::dataAtual(){
     return buf;
 }
 
-int controller::validarData(string data_admissao, funcionario f){
+int controller::validarData(string data_admissao, funcionario *novo){
 	string data_atual = dataAtual();
 	
 	// criação de inteiros para serem atribuídos a data atual e a de admissão, 
@@ -54,7 +54,7 @@ int controller::validarData(string data_admissao, funcionario f){
     else{
     
        		if(!(d_admissao > d_atual) || (mes[1] == 02 && dia[1] > 29)){ // considerando ano bissexto, a data não pode ser > 29
-       			f.setDataAdmissao(dia[1], mes[1], ano[1]);
+       			novo->setDataAdmissao(dia[1], mes[1], ano[1]);
     			cout << "Data inválida!" << endl;
     			return 0;
        		}
@@ -65,8 +65,8 @@ int controller::validarData(string data_admissao, funcionario f){
 }
 
 
-void controller::novoFuncionario(){ // criar um novo funcionário
-	funcionario f; // 0 = não pertence a nenhuma empresa, pois nenhuma tem o id = 0
+void controller::novoFuncionario(funcionario *novo){ // criar um novo funcionário
+	; // 0 = não pertence a nenhuma empresa, pois nenhuma tem o id = 0
 	string nome, data_admissao;
 	double salario;
 
@@ -74,14 +74,14 @@ void controller::novoFuncionario(){ // criar um novo funcionário
 	fflush(stdin);
 	cin >> nome;
     cout << endl;
-	f.setNome(nome);
+	novo->setNome(nome);
 
 
 	cout << "Salário: ";
 	fflush(stdin);
 	cin >> salario;
     cout << endl;
-	f.setSalario(salario);
+	novo->setSalario(salario);
 
 	bool data_valida = false;
 
@@ -92,7 +92,7 @@ void controller::novoFuncionario(){ // criar um novo funcionário
     	fflush(stdin);
     	cout << endl;
 
-    	if(validarData(data_admissao, f)){
+    	if(validarData(data_admissao, novo)){
     		data_valida = true;
     	}
 	}	
@@ -113,3 +113,7 @@ void controller::aumentoSalario(){ // aumentar o salário de todos, em %
 void controller::funcionariosExp(){ // listar os funcionários em experiência (com menos de 90 dias, considerando data atual)	
 
 }; 
+
+void controller::novaEmpresa(empresa *novo){
+
+}
