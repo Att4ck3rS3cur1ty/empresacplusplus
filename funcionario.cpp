@@ -36,3 +36,8 @@ string funcionario::getDataAdmissao(){
 
 funcionario::funcionario(int i):id_empresa_(i), nome_(""), salario_(0){}
 
+funcionario::funcionario(){
+	id_empresa_ = 0;
+	nome_ = "";
+	salario_ = 0;	
+}

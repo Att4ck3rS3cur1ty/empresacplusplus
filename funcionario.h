@@ -18,6 +18,7 @@ class funcionario{
 		double getSalario();
 		string getDataAdmissao();
 		funcionario(int i);
+		funcionario();
 };
 
 #endif

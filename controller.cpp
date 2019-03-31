@@ -66,7 +66,7 @@ int controller::validarData(string data_admissao, funcionario f){
 
 
 void controller::novoFuncionario(){ // criar um novo funcionário
-	funcionario f(0); // 0 = não pertence a nenhuma empresa, pois nenhuma tem o id = 0
+	funcionario f; // 0 = não pertence a nenhuma empresa, pois nenhuma tem o id = 0
 	string nome, data_admissao;
 	double salario;
 
