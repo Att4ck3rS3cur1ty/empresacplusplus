@@ -34,6 +34,18 @@ bool date::valid() const{
 	return true;
 };
 
+bool operator - (const date& d1, const date& d2){
+	if(!d1.valid()){
+		return false;
+	}
+
+	if(!d2.valid()){
+		return false;
+	}
+	
+	if( () )	
+}
+
 bool operator == (const date& d1, const date& d2){
 	//  check  for  equality
 	if(!d1.valid()){
@@ -102,6 +114,11 @@ inline date previous_date(const date &d){
 	ndat=date(28,(d.month() - 1),d.year()); if(ndat.valid()) return ndat;
 	ndat=date(31,12,(d.year() - 1));	return ndat;
 };
+
+date date::operator -(date temp){
+	date *temp2 = new date(this->day() - temp.day(), this->month() - temp.month(), this->year() - temp.year());
+	return *temp2;
+}
 
 date date::operator ++(int){//  postfix operator 
 	date d= *this;

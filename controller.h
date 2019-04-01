@@ -16,12 +16,15 @@ class controller{
 		const std::string dataAtual(); // obter a data atual no format dd/mm/aaaa
 		int validarData(string str, funcionario *novo); // validar a data através de expressão regular
 		void novoFuncionario(funcionario *f); // criar um novo funcionário
-		void addFuncionario(); // alocar um funcionário a uma empresa
-		void listarFuncionariosEmpresa(int id_empresa); // listar todos os funcionários de uma empresa
+		void addFuncionario(string cnpj); // alocar um funcionário a uma empresa
+		void listarFuncionariosEmpresa(string cnpj); // listar todos os funcionários de uma empresa
 		void aumentoSalario(); // aumentar o salário de todos, em %
 		void funcionariosExp(); // listar os funcionários em experiência (com menos de 90 dias, considerando data atual)	
 		void novaEmpresa(empresa *novo); // criar uma nova empresa
 		int validarCnpj(string cnpj);
+		int extrairDia(string data);
+		int extrairMes(string data);
+		int extrairAno(string data);
 };
 
 #endif

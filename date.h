@@ -27,6 +27,7 @@ class date{
 		date operator ++(int); //  postfix
 		date operator --(); //  prefix
 		date operator --(int); //  postfix
+		date operator -(date);
 	};
 
 bool operator == (const date&, const date&);//  comparison  operators

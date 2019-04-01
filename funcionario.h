@@ -5,15 +5,15 @@
 
 class funcionario{
 	private:
-		int id_empresa_; 
+		string cnpj_empresa_; 
 		std::string nome_;
 		double salario_;
 	public:
-		void setIdEmpresa(int id);
+		void setCnpjEmpresa(string cnpj);
 		void setNome(std::string nome);				
 		void setSalario(double salario);
 		void setDataAdmissao(const int& d, const int& m, const int& y);
-		int getIdEmpresa();
+		string getCnpjEmpresa();
 		std::string getNome();
 		double getSalario();
 		string getDataAdmissao();

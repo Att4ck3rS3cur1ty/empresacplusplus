@@ -7,7 +7,6 @@
 
 class empresa{
 	private:
-		int id_; // incrementar o id quando criar outra empresa
 		std::string nome_;
 		std::string cnpj_;
 	public:
@@ -15,6 +14,6 @@ class empresa{
 		void setCnpj(std::string cnpj);
 		std::string getNome();
 		std::string getCnjp();
-		empresa(int i); 
+		empresa(); 
 };
 #endif
