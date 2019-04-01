@@ -20,7 +20,8 @@ class controller{
 		void listarFuncionariosEmpresa(int id_empresa); // listar todos os funcionários de uma empresa
 		void aumentoSalario(); // aumentar o salário de todos, em %
 		void funcionariosExp(); // listar os funcionários em experiência (com menos de 90 dias, considerando data atual)	
-		void novaEmpresa(empresa *novo);		/// criar uma nova empresa
+		void novaEmpresa(empresa *novo); // criar uma nova empresa
+		int validarCnpj(string cnpj);
 };
 
 #endif

@@ -52,8 +52,7 @@ int controller::validarData(string data_admissao, funcionario *novo){
     }
 
     else{
-    
-       		if(!(d_admissao > d_atual) || (mes[1] == 02 && dia[1] > 29)){ // considerando ano bissexto, a data não pode ser > 29
+      		if(!(d_admissao > d_atual) || ((mes[1] == 02) && (dia[1] > 29))){ // considerando ano bissexto, a data não pode ser > 29
        			novo->setDataAdmissao(dia[1], mes[1], ano[1]);
     			cout << "Data inválida!" << endl;
     			return 0;
@@ -64,13 +63,12 @@ int controller::validarData(string data_admissao, funcionario *novo){
     return 0;
 }
 
-
 void controller::novoFuncionario(funcionario *novo){ // criar um novo funcionário
 	; // 0 = não pertence a nenhuma empresa, pois nenhuma tem o id = 0
 	string nome, data_admissao;
 	double salario;
 
-	cout << "Nome: ";
+	cout << "\nNome do funcionário: ";
 	fflush(stdin);
 	cin >> nome;
     cout << endl;
@@ -83,19 +81,13 @@ void controller::novoFuncionario(funcionario *novo){ // criar um novo funcionár
     cout << endl;
 	novo->setSalario(salario);
 
-	bool data_valida = false;
-
-	while(!data_valida){
+	while(!(validarData(data_admissao, novo))){
 		cout << "Data de admissão (dd/mm/aaaa): ";
 		fflush(stdin);
 		cin >> data_admissao;
     	fflush(stdin);
     	cout << endl;
-
-    	if(validarData(data_admissao, novo)){
-    		data_valida = true;
-    	}
-	}	
+	}
 }; 
 
 void controller::addFuncionario(){ // alocar um funcionário a uma empresa
@@ -115,5 +107,29 @@ void controller::funcionariosExp(){ // listar os funcionários em experiência (
 }; 
 
 void controller::novaEmpresa(empresa *novo){
+	string nome, cnpj;
+	cout << "\nNome da empresa: ";
+	fflush(stdin);
+	cin >> nome;
+	cout << endl;
+	novo->setNome(nome);
+	
+	while(!(validarCnpj(cnpj))){
+		cout << "CNPJ: ";
+		fflush(stdin);
+		cin >> cnpj;
+		cout << endl;
+	}
+}
 
+int controller::validarCnpj(string cnpj){
+	regex reg("[0-9]{2}\\.?[0-9]{3}\\.?[0-9]{3}\\/?[0-9]{4}\\-?[0-9]{2}");
+	smatch matches;
+	
+    if(!regex_search(cnpj, matches, reg)){
+    	cout << "CNPJ inválido!" << endl;
+        return 0;
+    }
+
+    else return 1;
 }

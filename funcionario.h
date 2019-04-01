@@ -19,6 +19,7 @@ class funcionario{
 		string getDataAdmissao();
 		funcionario(int i);
 		funcionario();
+		bool operator == (funcionario&);
 };
 
 #endif

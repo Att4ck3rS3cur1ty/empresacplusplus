@@ -4,6 +4,14 @@
 #include <string>
 using namespace std;
 
+funcionario::funcionario(int i):id_empresa_(i), nome_(""), salario_(0){}
+
+funcionario::funcionario(){
+	id_empresa_ = 0;
+	nome_ = "";
+	salario_ = 0;	
+}
+
 void funcionario::setIdEmpresa(int id){funcionario::id_empresa_ = id;};
 
 void funcionario::setNome(string nome){funcionario::nome_ = nome;};
@@ -34,10 +42,25 @@ string funcionario::getDataAdmissao(){
 	return dt_str[0] + "/" + dt_str[1] + "/" + dt_str[2];
 };
 
-funcionario::funcionario(int i):id_empresa_(i), nome_(""), salario_(0){}
-
-funcionario::funcionario(){
-	id_empresa_ = 0;
-	nome_ = "";
-	salario_ = 0;	
+bool operator == (funcionario& f1, funcionario& f2){
+	if((f1.getIdEmpresa() == f2.getIdEmpresa()) && (f1.getSalario() == f2.getSalario()) && 
+		(f1.getNome() == f2.getNome()) && (f1.getDataAdmissao() == f2.getDataAdmissao()))
+		return true;
+	return false;
 }
+
+/*
+bool operator == (funcionario f2){
+	if((this->getIdEmpresa() == f2.getIdEmpresa()) && (this->getSalario() == f2.getSalario()) && 
+		(this->getNome() == f2.getNome()) && (this->getDataAdmissao() == f2.getDataAdmissao()))
+		return true;
+	return false;
+}*/
+
+/*
+bool operator == (funcionario f2){
+	return ((this->getIdEmpresa() == f2.getIdEmpresa()) && (this->getSalario() == f2.getSalario()) && 
+		(this->getNome() == f2.getNome()) && (this->getDataAdmissao() == f2.getDataAdmissao()))
+		
+}
+*/
